@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SingUp</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+      rel="stylesheet"
+    />
+    <style>
+     
+    </style>
+  </head>
+  <body id="body">
+   <!--Navbar -->
+   <nav class="navbar">
+    <div class="container-navbar">
+        <a href="#"> <img src="https://cdn-icons-png.flaticon.com/128/4387/4387979.png?ga=GA1.1.445355362.1639164806&track=ais" height="45" alt="Logo" loading="lazy" style="padding-bottom: 3px;"/></a>
+    </div>
+  </nav>
+
+
+    <header>
+        <!-- Background image -->
+        <div
+          class=" text-center bg-image"
+          style="
+            background-image: url('background.jpg');
+            height: 90vh;">
+          <div
+            class="mask"
+            style="
+              background-color: rgba(0, 0, 0, 0.468);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+          <div class="cont">
+            <h2>SingUp</h2>
+            <input id="name" type="text" placeholder="Your Name:" />
+            <input id="email" type="email" placeholder="Email:" />
+            <input id="password" type="password" placeholder="password:" />
+
+            <div>
+              <button id="btn" class="btn mb-1 button" type="button">SingUp</button>
+              <p class="p-text">Already have an account? <a href="Login.html">LogIn</a></p>
+              <p id="alert"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Background image -->
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="text " >© 2023 by:Amwaj Mohammed </div>
+    </footer>
+    </header>
+  </body>
+
+  <!-- MDB -->
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
+  ></script>
+
+  <script>
+    document.getElementById("btn").addEventListener("click", () => {
+      let name = document.getElementById("name");
+      let email = document.getElementById("email");
+      let password = document.getElementById("password");
+      let alert = document.getElementById("alert");
+
+
+      let nameValid = /^[A-Za-z]{5,}$/;
+      let emailValid =
+        /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+      let passwordValid = /^\d{6,}$/;
+
+      if (name.value === "" || email.value === "" || password.value === "") {
+        alert.innerText ="input in empty";
+      } else if (!nameValid.test(name.value)) {
+        alert.innerText ="name is only character and more than 5";
+      } else if (!email.value.match(emailValid)) {
+        alert.innerText ="email is invalled";
+      } else if (!password.value.match(passwordValid)) {
+        alert.innerText ="password is only number and more than 6";
+      } else {
+        fetch("https://655127797d203ab6626e943b.mockapi.io/users", {
+          method: "POST",
+          body: JSON.stringify({
+            name: name.value,
+            email: email.value,
+            password: password.value,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
+          .then((response) => response.json())
+          .then((json) => (window.location.href = "Login.html"));
+      }
+    });
+  </script>
+</html>

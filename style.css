@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#body {
+        overflow: hidden;
+}
+
+.navbar {
+    background-color: rgba(177, 175, 168, 0.811);
+    width: 100vw;
+    height:max-content;
+}
+.container-navbar{
+    display: flex;
+   align-items: center;
+   padding: 0px 10px;
+}
+.navbar a{
+    color: black;
+    text-decoration: none;
+    padding: 0px 10px ;
+    font-weight:bold; 
+}
+
+.header{
+background-image:url('header.png');
+background-size: cover;
+background-repeat: no-repeat;
+ height: 70vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ text-align: center;
+ width: 100vw;
+
+}
+.header h{
+    font-size: 4rem;
+    color: #302F2A;
+}
+
+
+.container-ck{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#c0beb85b;
+    width: 100vw;
+    height:max-content;
+}
+.ckeditor{
+    padding: 20px;
+}
+.but_del {
+    margin-top: 15px;
+    width: 15vw;
+    height: 3vh;
+    border-radius: 10px;
+    border: 1px solid rgb(231, 158, 1);
+    color:  #302F2A;
+    background-color:rgb(231, 158, 1);
+    margin-bottom: 20px;
+}
+.but_del:hover{
+    color:  #302F2A;
+    background-color:rgba(255, 176, 6, 0.463);
+    ;
+   
+}
+.butsubmit {
+    margin-top: 15px;
+    width: 40vw;
+    height: 5vh;
+    border-radius: 10px;
+    border: 1px solid #302F2A;
+    color: white;
+    background-color: #302F2A;
+    margin-bottom: 20px;
+}
+.but-submit:hover , #btn:hover{
+    color: white;
+    background-color: #302f2ada;
+   
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    width: 100vw;
+    background-color:  rgba(177, 175, 168, 0.811);
+}
+
+.cont {
+    display: flex;
+    width: 40vw;
+    height: max-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.489);
+    background-color:rgba(255, 255, 255, 0.663)
+  }
+
+.cont h2 {
+    color: #302F2A;
+}
+.p-text{
+    color: #302F2A;
+    padding-top: 10px;
+}
+#name , #password , #email {
+    width: 100%;
+    height: 5vh;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+#btn{
+    background-color: white;
+    margin:5px 0px;
+    width: 100%;
+    height: 5vh;
+    border-radius: 10px;
+    border: 1px solid #302F2A;
+    color: white;
+    background-color: #302F2A;
+}
+#alert{
+    color: rgb(147, 5, 5);
+}
+
+ 
+  /* * Extra small devices (phones, 600px and down) */ 
+  @media only screen and (max-width: 600px) {
+    .cont {
+        width: max-content;
+    }
+    .but_del {
+        width: 25vw;
+    }
+    .header h{
+        color: white;
+    }
+
+  }
